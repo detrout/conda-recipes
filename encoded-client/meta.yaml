@@ -1,0 +1,32 @@
+package:
+  name: "encoded_client"
+  version: "0.3.0"
+
+source:
+  git_rev: "0.3.0"
+  git_url: "https://github.com/detrout/encoded_client.git"
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - git
+    - python
+    - pip
+    - wheel
+    - setuptools
+    - setuptools-scm
+  run:
+    - python
+    - jsonschema
+    - pandas
+    - requests
+
+about:
+  home: "https://github.com/detrout/encoded_client.git"
+  license: BSD
+  license_file: LICENSE.txt
+  summary: interface to the ENCODE DCC/IGVF DACC portal

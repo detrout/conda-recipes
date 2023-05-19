@@ -1,0 +1,16 @@
+package:
+  name: "star"
+  version: "2.7.10a"
+
+source:
+  git_rev: "2.7.10a"
+  git_url: "https://github.com/alexdobin/STAR.git"
+
+requirements:
+  build:
+#    - {{ compiler('c') }}
+#    - {{ compiler('cxx') }}
+    - git
+
+about:
+  home: "https://github.com/alexdobin/STAR"

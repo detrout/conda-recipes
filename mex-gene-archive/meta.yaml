@@ -1,0 +1,33 @@
+{% set version = "0.2.2" %}
+
+package:
+  name: "mex_gene_archive"
+  version: {{ version }}
+
+source:
+  git_rev: {{ version }}
+  git_url: "https://github.com/detrout/mex_gene_archive.git"
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - git
+    - python
+    - pip
+    - wheel
+    - setuptools
+    - setuptools-scm
+  run:
+    - python
+    - numpy
+    - anndata
+
+about:
+  home: "https://github.com/detrout/mex_gene_archive.git"
+  license: BSD
+  license_file: LICENSE.txt
+  summary: interface to the ENCODE DCC/IGVF DACC portal
