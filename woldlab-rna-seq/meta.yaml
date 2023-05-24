@@ -28,12 +28,12 @@ requirements:
     - pandas
     - requests
     - scipy
-# Not in conda
-#    - encoded_client >=0.3.0
-#    - mex_gene_archive >=0.2.1
-#    - pysam
-#    - tables
-#    - xopen
+# Not in conda-forge
+# Use -c bioconda -c https://woldlab.caltech.edu/~diane/conda to build
+    - encoded_client >=0.3.0
+    - mex_gene_archive >=0.2.1
+    - pysam
+    - xopen
 # Too old
 #    - bokeh >=0.12.10,<1.0
 
