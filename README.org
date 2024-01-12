@@ -1,0 +1,36 @@
+* Introduction
+
+Various recipes to build conda packages for software I was using in
+[[https://github.com/detrout/woldrnaseq-wrappers][woldrnaseq-wrappers]] for snakemake wrappers for a pipeline in
+[[https://github.com/detrout/woldlab-rna-seq/][woldlab-rna-seq]]
+
+| wrapper          | description                                                                      |
+| encoded-client   | Provides wrapper around ENCODE/IGVF portal REST object databases                 |
+| mex-gene-archive | Stores matrix market gene quantification files with row and column labels and a small manifest file in a tar file |
+| star-conda       | a specific version of the STAR rna aligner for my pipeline                       |
+| woldlab-rna-seq  | Pipeline and reporting software                                                  |
+
+* Building
+
+I didn't feel like uploading this to public repositories so I built
+and hosted my own conda channel.
+
+(I'm writing this quite a while after I actually deployed this so this
+instructions might be wrong)
+
+A recipe can be built and installed into a directory for sharing with
+the [[https://docs.conda.io/projects/conda-build/en/latest/resources/commands/conda-build.html][conda-build]] command
+
+#+begin_src bash
+  CHANNEL_DIR=~/public_html/conda/
+  conda-build --output-folder ${CHANNEL_DIR} ${recipe}
+#+end_src
+
+Once the package is built and installed into the channel directory
+tree, I think it needs an index to be updated with [[https://docs.conda.io/projects/conda-build/en/latest/resources/commands/conda-index.html][conda-index]]
+
+#+begin_src bash
+  pushd ${CHANNEL_DIR}
+  conda-index
+  popd
+#+end_src
