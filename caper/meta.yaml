@@ -1,0 +1,47 @@
+{% set name = "caper" %}
+{% set version = "2.3.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 07da1aef64eb623c75042b35e883588eabacee437d5e03cc3aba62deae593c68
+
+build:
+  skip: true  # [py<36 or win]
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - pyhocon >=0.3.53
+    - requests >=2.20
+    - pyopenssl
+    - autouri >=0.4.4
+    - miniwdl >=0.7.0
+    - humanfriendly
+    - numpy >=1.8.2
+    - pandas >=1.0
+    - scikit-learn >=0.19.2
+    - matplotlib >=1.5
+    - six >=1.13.0
+
+test:
+  imports:
+    - caper
+
+about:
+  home: https://github.com/ENCODE-DCC/caper
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Cromwell Assisted Pipeline ExecutoR
+  description: |
+    Python wrapper for Cromwell
+  dev_url: https://github.com/ENCODE-DCC/caper
