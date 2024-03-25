@@ -30,4 +30,4 @@ about:
   home: "https://github.com/detrout/mex_gene_archive.git"
   license: BSD
   license_file: LICENSE.txt
-  summary: interface to the ENCODE DCC/IGVF DACC portal
+  summary: Library for ENCODE scRNA-seq tar files with embedded metadata
