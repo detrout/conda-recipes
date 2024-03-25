@@ -1,0 +1,44 @@
+{% set version = "0.28.2" %}
+
+package:
+  name: "kb-python"
+  version: "{{ version }}"
+
+source:
+  git_rev: "v{{ version }}"
+  git_url: "https://github.com/pachterlab/kb_python.git"
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - git
+    - python
+    - pip
+    - wheel
+    - yapf
+  run:
+    - python
+    - conda-forge::anndata >=0.6.22
+    - bioconda::bustools >=0.43
+    - h5py >=2.10.0
+    - jinja2 >=2.10.1
+    - bioconda::kallisto >=0.50
+    - conda-forge::loompy >=3.0.6
+    - nbconvert >=5.4.0
+    - nbformat >=4.4.0
+    - numpy >=1.21
+    - pandas >=1.5, <2
+    - plotly >=4.5.0
+    - conda-forge::scanpy >=1.4.4
+    - scikit-learn >=0.21.3
+    - conda-forge::typing-extensions >=3.7.4
+
+about:
+  home: "https://www.kallistobus.tools/"
+  license: BSD
+  license_file: LICENSE
+  summary: Wrapper for the kallisto | bustools workflow for single-cell RNA-seq pre-processing
