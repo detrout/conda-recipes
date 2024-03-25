@@ -1,0 +1,25 @@
+package:
+  name: "klue"
+  version: "0"
+
+source:
+  git_rev: "4984d1d85ace92817a971ffe5d470d3b7aff5393"
+  git_url: "git@github.com:Yenaled/klue.git"
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - {{ compiler("c") }}
+    - {{ compiler("cxx") }}
+    - cmake
+  host:
+    - zlib
+  run:
+
+about:
+  home: "http://github.com/Yenaled/klue.git"
+  license: BSD
+  license_file: LICENSE
+  summary: Klue
