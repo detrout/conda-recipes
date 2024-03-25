@@ -31,6 +31,6 @@ tree, I think it needs an index to be updated with [[https://docs.conda.io/proje
 
 #+begin_src bash
   pushd ${CHANNEL_DIR}
-  conda-index
+  conda index .
   popd
 #+end_src
