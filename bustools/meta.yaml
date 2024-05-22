@@ -1,0 +1,30 @@
+{% set version = "0.43.2" %}
+
+package:
+  name: "bustools"
+  version: "{{ version }}"
+
+source:
+  git_rev: "v{{ version }}"
+  git_url: "https://github.com/BUStools/bustools.git"
+  patches:
+    - fix-zlib-include-dir.patch
+
+build:
+  number: 2
+
+requirements:
+  build:
+    - git
+    - cmake
+    - {{ compiler("cxx") }}
+  host:
+    - hdf5
+    - libzlib
+    
+
+about:
+  home: "https://bustools.github.io/"
+  license: BSD-2-Clause
+  license_file: LICENSE
+  summary: Tools for working with BUS files 

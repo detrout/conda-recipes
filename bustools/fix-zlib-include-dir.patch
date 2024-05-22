@@ -1,0 +1,15 @@
+--- src/CMakeLists.txt.orig	2024-05-16 18:36:34.223870445 -0700
++++ src/CMakeLists.txt	2024-05-16 18:36:54.296338579 -0700
+@@ -29,5 +29,5 @@
+ 
+  if ( ZLIB_FOUND )
+-     include_directories( ${ZLIB_INCLUDE_DIRS} )
++     include_directories( ${ZLIB_INCLUDE_DIR} )
+  else()
+    message(FATAL_ERROR "zlib not found. Required for reading FASTQ files" )
+@@ -37,4 +37,5 @@
+ include_directories(../dependencies/eigen-3.3.7)
+ include_directories(../dependencies/LBFGSpp-2020-03-06/include)
++include_directories(../../_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/include/)
+ 
+ 
