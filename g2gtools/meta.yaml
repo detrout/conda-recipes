@@ -1,0 +1,47 @@
+{% set name = "g2gtools" %}
+{% set version = "0.2.7" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b104b5afb5d0eb051cba941cdefd7f54467b92050ae5f0a294844940f5af7578
+  patches:
+    - fix-future-import.patch
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - future >=0.15
+    - cython
+    - numpy >=1.14,<2.0
+    - natsort >=5.0.1
+    - pysam >=0.14
+    - bioconda::bx-python >=0.8
+
+about:
+  home: https://churchill-lab.github.io/g2gtools/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Create custom genomes from a reference genome and SNP and indels
+  description: |
+    g2gtools creates custom genomes by incorporating SNPs and indels
+    into reference genome, extracts regions of interest, e.g., exons
+    or transcripts, , and converts coordinates of files (bam, gtf,
+    bed) between two genomes. Unlike other liftover tools, g2gtools
+    does not throw away alignments that land on indel regions. Release
+    Version 0.2 can now create personal diploid genomes. The new
+    version still lifts over diploid alignments on personal genome
+    coordinates back to that of reference so we can compare alignments
+    from among samples in a population.
+  dev_url: https://github.com/churchill-lab/g2gtools

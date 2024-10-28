@@ -1,0 +1,13 @@
+--- g2gtools/vci_parse.py~	2024-09-09 16:53:49.000000000 -0700
++++ g2gtools/vci_parse.py	2024-09-09 17:06:28.346495336 -0700
+@@ -1,8 +1,8 @@
++from __future__ import print_function
++
+ from . import exceptions
+ from . import g2g
+ from . import g2g_utils
+ 
+-from __future__ import print_function
+-
+ import pysam
+ import collections
