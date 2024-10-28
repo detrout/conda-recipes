@@ -23,7 +23,7 @@ the [[https://docs.conda.io/projects/conda-build/en/latest/resources/commands/co
 
 #+begin_src bash
   CHANNEL_DIR=~/public_html/conda/
-  conda-build --output-folder ${CHANNEL_DIR} ${recipe}
+  conda-build --output-folder ${CHANNEL_DIR} ${recipe_dir}
 #+end_src
 
 Once the package is built and installed into the channel directory
