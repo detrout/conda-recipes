@@ -31,6 +31,10 @@ requirements:
     - ntplib
 
 test:
+  source_files:
+    - tests/
+  requires:
+    - pytest
   imports:
     - autouri
 
