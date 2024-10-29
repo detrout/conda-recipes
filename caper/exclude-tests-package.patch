@@ -1,0 +1,9 @@
+--- caper-2.3.2/setup.py~	2023-07-21 11:40:30.000000000 -0700
++++ caper-2.3.2/setup.py	2024-10-29 08:56:43.886437238 -0700
+@@ -52,5 +52,5 @@
+     long_description_content_type='text/markdown',
+     url='https://github.com/ENCODE-DCC/caper',
+-    packages=setuptools.find_packages(exclude=['mysql*', 'docs']),
++    packages=setuptools.find_packages(exclude=['mysql*', 'docs', 'tests']),
+     classifiers=[
+         'Programming Language :: Python :: 3',

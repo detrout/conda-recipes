@@ -1,0 +1,9 @@
+--- setup.py~     2023-05-04 10:34:41.000000000 -0700
++++ setup.py      2024-10-28 19:41:05.660182235 -0700
+@@ -47,5 +47,5 @@
+     long_description_content_type="text/markdown",
+     url="https://github.com/ENCODE-DCC/autouri",
+-    packages=setuptools.find_packages(exclude=["docs", "test"]),
++    packages=setuptools.find_packages(exclude=["docs", "tests"]),
+     classifiers=[
+         "Programming Language :: Python :: 3",
