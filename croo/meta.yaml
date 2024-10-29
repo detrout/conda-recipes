@@ -1,0 +1,47 @@
+{% set name = "croo" %}
+{% set version = "0.6.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  #sha256: 6874037bbadcefb4003fdea5466eded76ac84616f4701025a50880fdfc365f43
+  url: https://github.com/ENCODE-DCC/{{name}}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 0d15ad73e2e742cb8a615fd25d9f805efd1144b6b71144ca1a9797fbd288a68e
+
+build:
+  noarch: python
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - autouri >=0.2.3
+    - caper
+    - python-graphviz
+    - miniwdl
+
+test:
+  source_files:
+    test/
+  requires:
+    - pytest
+    - python-graphviz
+  imports:
+    - croo
+
+about:
+  home: https://github.com/ENCODE-DCC/croo
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Cromwell Output Organizer
+  description: |
+    Croo is a Python package for organizing outputs from Cromwell.
+  dev_url: https://github.com/ENCODE-DCC/croo
